@@ -1,0 +1,25 @@
+From d6166d9f38208a63c90cec66d5e8f3455fb6a4bd Mon Sep 17 00:00:00 2001
+From: Aman Surkar <Aman.Surkar@ibm.com>
+Date: Wed, 29 May 2024 06:08:37 +0000
+Subject: [PATCH] Fixed DILL_AVAILABLE for torchdata
+
+---
+ torch/utils/data/datapipes/utils/common.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/torch/utils/data/datapipes/utils/common.py b/torch/utils/data/datapipes/utils/common.py
+index faf45c07889..6e27b81d50f 100644
+--- a/torch/utils/data/datapipes/utils/common.py
++++ b/torch/utils/data/datapipes/utils/common.py
+@@ -19,6 +19,8 @@ __all__ = [
+     "validate_pathname_binary_tuple",
+ ]
+ 
++# BC for torchdata
++DILL_AVAILABLE = dill_available()
+ 
+ def validate_input_col(fn: Callable, input_col: Optional[Union[int, tuple, list]]):
+     """
+-- 
+2.40.1
+

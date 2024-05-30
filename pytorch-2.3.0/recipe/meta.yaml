@@ -45,7 +45,7 @@ requirements:
     - numactl {{ numactl }}
     - lmdb {{ lmdb }}
     - leveldb {{ leveldb }}
-    - typing_extensions {{ typing_extensions }}
+    - typing_extensions
     - zlib {{ zlib }}
 {% if build_type == 'cuda' %}
     - cudnn {{ cudnn }}
@@ -62,7 +62,7 @@ requirements:
     - protobuf {{ protobuf }}
     - tabulate {{ tabulate }}
     - pillow
-    - typing_extensions {{ typing_extensions }}
+    - typing_extensions
     - click {{ click }}
     # https://github.com/AnacondaRecipes/click-feedstock/issues/4
     - networkx {{ networkx }}

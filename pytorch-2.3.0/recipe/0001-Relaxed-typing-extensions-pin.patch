@@ -1,0 +1,25 @@
+From a5d36cd648b07ff1a5c8e3106ca3bccaeac3c053 Mon Sep 17 00:00:00 2001
+From: Aman Surkar <Aman.Surkar@ibm.com>
+Date: Fri, 14 Jun 2024 06:17:13 +0000
+Subject: [PATCH] Relaxed typing-extensions pin
+
+---
+ setup.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/setup.py b/setup.py
+index 6b0860a9ee1..d7f6f92333a 100644
+--- a/setup.py
++++ b/setup.py
+@@ -1106,7 +1106,7 @@ def main():
+     # the list of runtime dependencies required by this built package
+     install_requires = [
+         "filelock",
+-        "typing-extensions>=4.8.0",
++        "typing-extensions",
+         "sympy",
+         "networkx",
+         "jinja2",
+-- 
+2.40.1
+

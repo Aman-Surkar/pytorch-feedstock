@@ -17,11 +17,12 @@ source:
     # 03xx - patch temporary to fix a problem that when fixed upstream can be removed
     - 0309-fallback-to-cpu_kernel-with-VSX.patch     # [ppc64le]
 #    - 0302-cpp-extension.patch
-    - 0310-PR100149.patch                #[ppc_arch == "p10"]
+#    - 0310-PR100149.patch                #[ppc_arch == "p10"]
     - 0311-PR104956.patch                # [ppc64le]
     - 0312-Disabled-Wno-error-flag-for-p10.patch #[ppc_arch == "p10"]
     - 0001-Corrected-sysconf-parameter.patch  #[ppc64le]
     - 0001-Fixed-DILL_AVAILABLE-for-torchdata.patch
+    - 0001-Relaxed-typing-extensions-pin.patch
 
 requirements:
   build:
@@ -45,7 +46,7 @@ requirements:
     - numactl {{ numactl }}
     - lmdb {{ lmdb }}
     - leveldb {{ leveldb }}
-    - typing_extensions
+    - typing_extensions {{ typing_extensions }}
     - zlib {{ zlib }}
 {% if build_type == 'cuda' %}
     - cudnn {{ cudnn }}
@@ -62,7 +63,7 @@ requirements:
     - protobuf {{ protobuf }}
     - tabulate {{ tabulate }}
     - pillow
-    - typing_extensions
+    - typing_extensions {{ typing_extensions }}
     - click {{ click }}
     # https://github.com/AnacondaRecipes/click-feedstock/issues/4
     - networkx {{ networkx }}

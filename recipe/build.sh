@@ -31,7 +31,7 @@ then
   export CFLAGS="${CFLAGS} -mcpu=${cpu_opt_arch} -mtune=${cpu_opt_tune}"
 fi
 
-SCRIPT_DIR=$RECIPE_DIR/../../scripts
+SCRIPT_DIR=$RECIPE_DIR/../scripts
 
 CUDA_VERSION="${cudatoolkit%.*}"
 
